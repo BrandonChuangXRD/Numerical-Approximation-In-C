@@ -1,5 +1,4 @@
 #include "mathlib.h"
-#include "newtonprintless.h"
 
 #include <math.h>
 #include <stdio.h>
@@ -14,7 +13,7 @@ double pi_madhava(void) {
     bottom = (2.0 * madhava_terms) + 1.0;
     step = 1.0 / (top * bottom);
     sum += step;
-    eval = sum * newton_printless(12);
+    eval = sum * sqrt_newton(12, true);
     top *= -3.0;
     madhava_terms++;
   } while (absolute(step) > EPSILON && madhava_terms < 1000);

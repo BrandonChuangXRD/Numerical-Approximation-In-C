@@ -2,6 +2,8 @@
 
 #define EPSILON 1e-14
 
+#include <stdbool.h>
+
 static inline double absolute(double x) { return x < 0.0 ? -x : x; }
 
 double e(void);
@@ -24,6 +26,6 @@ double pi_viete(void);
 
 int pi_viete_factors(void);
 
-double sqrt_newton(double);
+double sqrt_newton(double, bool);
 
 int sqrt_newton_iters(void);

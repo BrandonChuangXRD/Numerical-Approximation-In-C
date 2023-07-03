@@ -1,12 +1,13 @@
 #include "mathlib.h"
 
 #include <math.h>
+#include <stdbool.h>
 #include <stdio.h>
 
 static int newton_iters = 0;
 // basically copied from asgn2 paper and translated to c: credit Professor
 // (Darrell) Long
-double sqrt_newton(double x) {
+double sqrt_newton(double x, bool silent) {
   long double z = 0.0;
   long double y = 1.0;
   while (absolute(y - z) > EPSILON) {
@@ -14,9 +15,11 @@ double sqrt_newton(double x) {
     y = 0.5 * (z + x / z);
     newton_iters++;
   }
-  printf("sqrt_newton(%f) = %16.15Lf, ", x, y);
-  printf("sqrt(%f) = %16.15lf, ", x, sqrt(x));
-  printf("diff = %16.15lf\n", absolute(y - sqrt(x)));
+  if (!silent) {
+    printf("sqrt_newton(%f) = %16.15Lf, ", x, y);
+    printf("sqrt(%f) = %16.15lf, ", x, sqrt(x));
+    printf("diff = %16.15lf\n", absolute(y - sqrt(x)));
+  }
   return y;
 }
 

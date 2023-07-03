@@ -1,5 +1,4 @@
 #include "mathlib.h"
-#include "newtonprintless.h"
 
 #include <math.h>
 #include <stdio.h>
@@ -12,7 +11,7 @@ double pi_viete(void) {
   double step = 1.0;
   double eval = 0.0;
   do {
-    top_step = newton_printless(top_step + 2.0);
+    top_step = sqrt_newton(top_step + 2.0, true);
     step = top_step / 2.0;
     previous = product;
     product *= step;

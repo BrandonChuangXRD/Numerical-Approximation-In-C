@@ -1,6 +1,4 @@
 #include "mathlib.h"
-#include "newtonprintless.h"
-
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -21,7 +19,7 @@ int main(int argc, char **argv) {
       pi_euler();
       pi_viete();
       for (double i = 0.0; i < 10.0; i += .1) {
-        sqrt_newton(i);
+        sqrt_newton(i, false);
       }
       break;
     case 'e':
@@ -41,7 +39,7 @@ int main(int argc, char **argv) {
       break;
     case 'n':
       for (double i = 0.0; i <= 10.0; i += .1) {
-        sqrt_newton(i);
+        sqrt_newton(i, false);
       }
       break;
     case 's':
