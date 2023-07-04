@@ -18,7 +18,7 @@ double pi_bbp(void) {
     k++;
     expo *= 16;
   } while (temp / expo > EPSILON);
-  printf("pi_bbp) = %15.16lf, ", eval);
+  printf("pi_bbp() = %15.16lf, ", eval);
   printf("M_PI = %15.16lf, ", M_PI);
   printf("diff = %15.16lf\n", absolute(eval - M_PI));
   bbp_terms = k;
