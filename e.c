@@ -8,11 +8,8 @@ double e(void) {
   // int k is the K in the equation
   double eval = 1.0;
   double prev_factorial = 1.0;
-  // double prev_eval = 1.0;
   do {
     e_loops++;
-    // prev_eval = eval;
-    // for the factorial
     prev_factorial *= e_loops;
     eval += 1.0 / prev_factorial;
   } while (1.0 / prev_factorial > EPSILON && e_loops < 1000);

@@ -36,4 +36,4 @@ to run, simply write ./mathlib-test in the terminal and include the flags that y
 | -s | prints the amount of iterations/terms/factors for each approximation that is run |
 
 # ERRORS:
-this program DOES NOT have -s and -h implimented correctly. They do not do anything.
+there are none that I am aware of.

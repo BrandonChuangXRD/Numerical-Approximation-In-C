@@ -23,6 +23,4 @@ double pi_euler(void) {
   return eval;
 }
 
-int pi_euler_terms(void) {
-  return euler_terms - 1; // I dont have time for clean code
-}
+int pi_euler_terms(void) { return euler_terms - 1; }

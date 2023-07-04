@@ -5,9 +5,7 @@
 #include <unistd.h>
 #define OPTIONS "aebmrvnsh"
 
-// this is basically copied from the getopt example in the asgn2.pdf.
 int main(int argc, char **argv) {
-  // static bool print_stats = false;
   int opt = 0;
   bool print_stats = false;
   bool run_e = false;
@@ -19,7 +17,7 @@ int main(int argc, char **argv) {
   bool print_help = false;
   while ((opt = getopt(argc, argv, OPTIONS)) != -1) {
     switch (opt) {
-      case 'h':
+    case 'h':
       print_help = true;
       break;
     case 's':
@@ -55,9 +53,26 @@ int main(int argc, char **argv) {
       printf("ERROR: This message should never be printed.");
     }
   }
-  //execution part
+  // execution part
   if (print_help) {
-    printf("TODO\n");
+    printf(
+        "usage: ./mathlib-test [-h] [-s] [-a] [-e] [-b] [-m] [-r] [-v] [-n]\n");
+    printf("options:\n");
+    printf("   -h: show this help message and exit\n");
+    printf("   -s: show number of terms/factors/iterations for each algorithm "
+           "executed\n");
+    printf("   -a: execute all algorithms\n");
+    printf("   -e: execute Jacob Bernoulli's taylor series approximation "
+           "algorithm for e\n");
+    printf(
+        "   -b: execute the Bailey-Borwein-Plouffe formula algorithm for pi\n");
+    printf(
+        "   -m: execute the Madhava Series approximation algorithm for pi\n");
+    printf(
+        "   -r: execute the eurler identity approximation algorithm for pi\n");
+    printf("   -v: execute the Viete's formula algorithm for pi\n");
+    printf("   -n: execute the Newton-Rhapson's approxmation algorithm for "
+           "square roots for every 1/10th number from 0-10 inclusive\n");
     return 0;
   }
   if (run_e) {

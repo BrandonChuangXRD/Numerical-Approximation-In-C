@@ -1,12 +1,10 @@
 #include "mathlib.h"
 
 #include <math.h>
-#include <stdio.h>
 #include <stdbool.h>
+#include <stdio.h>
 
 static int newton_iters = 0;
-// basically copied from asgn2 paper and translated to c: credit Professor
-// (Darrell) Long
 double sqrt_newton(double x, bool silent) {
   newton_iters = 0;
   long double z = 0.0;
